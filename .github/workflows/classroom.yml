@@ -2,8 +2,6 @@ name: Autograding Tests
 'on':
 - push
 - repository_dispatch
-- workflow_dispatch
-  
 permissions:
   checks: write
   actions: read
@@ -15,7 +13,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: pytest
+    - name: Pytest
       id: pytest
       uses: classroom-resources/autograding-python-grader@v1
       with:
@@ -28,7 +26,3 @@ jobs:
         PYTEST_RESULTS: "${{steps.pytest.outputs.result}}"
       with:
         runners: pytest
-    - name: Test with pytest  
-      run: coverage run -m pytest  -v -s  
-    - name: Generate Coverage Report  
-      run: coverage report -m
