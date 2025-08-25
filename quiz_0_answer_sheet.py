@@ -13,7 +13,6 @@ and callable from anywhere. The assumption is that these files are general tools
 in any project, and you are importing them into your notebook to use them in whatever analysis you are doing.
 '''
 
-
 def numberAdder(num_1, num_2):
     """
     Adds two numbers together.
